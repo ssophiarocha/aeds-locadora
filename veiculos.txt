@@ -1,0 +1,108 @@
+veiculo inicio
+numero 1
+placa HDV3838
+marca Honda
+modelo Fit
+ano 2015
+categoria Ret
+assentos 5
+veiculo fim 
+
+veiculo inicio
+numero 2
+placa PZJ8027
+marca Fiat
+modelo Uno
+ano 2015
+categoria Ret
+assentos 5
+veiculo fim 
+
+veiculo inicio
+numero 3
+placa OQY6655
+marca Toyota
+modelo Etios
+ano 2018
+categoria Ret
+assentos 5
+veiculo fim 
+
+veiculo inicio
+numero 4
+placa ZOT1234
+marca Hyundai
+modelo HB20
+ano 2014
+categoria Ret
+assentos 5
+veiculo fim 
+
+veiculo inicio
+numero 5
+placa ZOT1234
+marca Hyundai
+modelo HB20s
+ano 2015
+categoria Sedan
+assentos 5
+veiculo fim 
+
+veiculo inicio
+numero 6
+placa BJH4120
+marca Jeep
+modelo Renegade
+ano 2018
+categoria SuV
+assentos 5
+veiculo fim 
+
+veiculo inicio
+numero 7
+placa XWA8824
+marca Toyota
+modelo Yaris
+ano 2021
+categoria Ret
+assentos 5
+veiculo fim 
+
+veiculo inicio
+numero 8
+placa HXH2974
+marca Fiat
+modelo Argo
+ano 2021
+categoria Ret
+assentos 5
+veiculo fim 
+
+veiculo inicio
+numero 9
+placa SQL4309
+marca VolksWagen
+modelo Saveiro
+ano 2019
+categoria Picape
+assentos 2
+veiculo fim 
+
+veiculo inicio
+numero 10
+placa JSC5632
+marca Fiat
+modelo Strada
+ano 2022
+categoria Picape
+assentos 2
+veiculo fim 
+
+veiculo inicio
+numero 11
+placa CMM8989
+marca Kia
+modelo Serato
+ano 2012
+categoria Sedan
+veiculo fim 

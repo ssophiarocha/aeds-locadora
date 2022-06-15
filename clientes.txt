@@ -1,0 +1,63 @@
+cliente inicio
+codigo 1
+nome Juliana Serra
+cnh 0004568899
+telefone 3199755-0908
+endereco Rua das Abelhinhas 
+cliente fim
+
+cliente inicio
+codigo 2
+nome Matheus Pessoa
+cnh 0007866529
+telefone 3199998-9888
+endereco Avenida do Forro
+cliente fim
+
+cliente inicio
+codigo 3
+nome Sophia Rocha
+cnh 0000543897
+telefone 319865-9034
+endereco Rua da Nico
+cliente fim
+
+cliente inicio
+codigo 4
+nome Carolina Gouveia
+cnh 0000784567
+telefone 3397864-7634
+endereco Avenida dos Legumes
+cliente fim
+
+cliente inicio
+codigo 5
+nome Rubia Sansarah
+cnh 0000973651
+telefone 8499786-4267
+endereco Rua dos Bispos
+cliente fim
+
+cliente inicio
+codigo 6
+nome Luiza Caetano
+cnh 0000836578
+telefone 2198759-3278
+endereco Beco do Violeiro
+cliente fim
+
+cliente inicio
+codigo 7
+nome Pedro Araujo
+cnh 0000835698
+telefone 8297865-3398
+endereco Avenida da Media
+cliente fim
+
+cliente inicio
+codigo 8
+nome Joao Giovanninni
+cnh 000032786
+telefone 3198743-0466
+endereco Rua da Janta
+cliente fim
