@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 struct sVeiculos
 {
-    int numero;
+    int codigo;
     char placa[10];
     char marca[20];
     char modelo[20];
@@ -31,56 +32,56 @@ int main()
     carregaClientes();
     carregaVeiculos();
 
-    printf("\n---------------------------------------------\n");
-    printf("\n------------------LOCAMAIS-------------------\n");
-    printf("\n---------------------------------------------\n");
+    // printf("\n---------------------------------------------\n");
+    // printf("\n------------------LOCAMAIS-------------------\n");
+    // printf("\n---------------------------------------------\n");
 
-    printf("\n(1) Cadastrar veiculo\n(2) Cadastrar cliente\n(3) Cadastrar locacao\n(4) Validar locacao\n(5) Pesquisar clientes\n(6) Listar clientes\n(7) Pesquisar veiculos\n(8) Lista veiculos\n(9) Imprimir veiculos\n(10) Imprimir clientes\n Caso queira SAIR, digite 0\n");
+    // printf("\n(1) Cadastrar veiculo\n(2) Cadastrar cliente\n(3) Cadastrar locacao\n(4) Validar locacao\n(5) Pesquisar clientes\n(6) Listar clientes\n(7) Pesquisar veiculos\n(8) Lista veiculos\n(9) Imprimir veiculos\n(10) Imprimir clientes\n Caso queira SAIR, digite 0\n");
 
-    printf("Digite um numero para executar a funcao: ");
-    scanf("%d", &opcao);
+    // printf("Digite um numero para executar a funcao: ");
+    // scanf("%d", &opcao);
 
-    while (opcao != 0)
-    {
-        switch (opcao)
-        {
-        case 1:
-            cadastraveiculo();
-            break;
-        case 2:
-            cadastracliente();
-            break;
-        case 3:
-            cadastraloc();
-            break;
-        case 4:
-            validaloc();
-            break;
-        case 5:
-            pesquisacliente();
-            break;
-        case 6:
-            listacliente();
-            break;
-        case 7:
-            pesquisaveiculo();
-            break;
-        case 8:
-            listaveiculo();
-            break;
-        case 9:
-            printVeiculos();
-            break;
-        case 10:
-            printClientes();
-            break;
-        }
-        printf("\n \n  O que mais voce deseja? \n \n");
-        printf("\n(1) Cadastrar veiculo\n(2) Cadastrar cliente\n(3) Cadastrar locacao\n(4) Validar locacao\n(5) Pesquisar clientes\n(6) Listar clientes\n(7) Pesquisar veiculos\n(8) Lista veiculos\n(9) Imprimir veiculos\n(10) Imprimir clientes\nCaso queira SAIR, digite 0\n");
+    // while (opcao != 0)
+    // {
+    //     switch (opcao)
+    //     {
+    //     case 1:
+    //         cadastraVeiculo();
+    //         break;
+    //     case 2:
+    //         cadastraCliente();
+    //         break;
+    //     case 3:
+    //         cadastraLoc();
+    //         break;
+    //     case 4:
+    //         validaLoc();
+    //         break;
+    //     case 5:
+    //         pesquisaCliente();
+    //         break;
+    //     case 6:
+    //         listaCliente();
+    //         break;
+    //     case 7:
+    //         pesquisaVeiculo();
+    //         break;
+    //     case 8:
+    //         listaVeiculo();
+    //         break;
+    //     case 9:
+    //         printVeiculos();
+    //         break;
+    //     case 10:
+    //         printClientes();
+    //         break;
+    //     }
+    //     printf("\n \n  O que mais voce deseja? \n \n");
+    //     printf("\n(1) Cadastrar veiculo\n(2) Cadastrar cliente\n(3) Cadastrar locacao\n(4) Validar locacao\n(5) Pesquisar clientes\n(6) Listar clientes\n(7) Pesquisar veiculos\n(8) Lista veiculos\n(9) Imprimir veiculos\n(10) Imprimir clientes\nCaso queira SAIR, digite 0\n");
 
-        printf("\n Digite um numero para executar a funcao: ");
-        scanf("%d", &opcao);
-    }
+    //     printf("\n Digite um numero para executar a funcao: ");
+    //     scanf("%d", &opcao);
+    // }
 }
 int carregaClientes()
 {
@@ -141,7 +142,7 @@ int carregaVeiculos()
             if (strcmp(nomeCampo, "veiculo") == 0 && strcmp(valorCampo, "inicio") == 0)
             {
                 i = i + 1;
-                vetVeiculos[i].numero = i;
+                vetVeiculos[i].codigo = i;
                 strcpy(vetVeiculos[i].placa, "");
                 strcpy(vetVeiculos[i].marca, "");
                 strcpy(vetVeiculos[i].modelo, "");
@@ -163,7 +164,7 @@ int carregaVeiculos()
             r = fscanf(arqVeiculos, "%s %[^\n}]", &nomeCampo, &valorCampo);
         }
         i = i + 1;
-        vetVeiculos[i].numero = 999;
+        vetVeiculos[i].codigo = 999;
         fclose(arqVeiculos);
     }
     else
@@ -176,9 +177,9 @@ int carregaVeiculos()
 
 void printVeiculos()
 {
-    for (int i = 1; i < 100 && vetVeiculos[i].numero != 999; i++)
+    for (int i = 1; i < 100 && vetVeiculos[i].codigo != 999; i++)
     {
-        printf("\n%i %s %s %s %s %s", vetVeiculos[i].numero,
+        printf("\n%i %s %s %s %s %s", vetVeiculos[i].codigo,
                vetVeiculos[i].placa,
                vetVeiculos[i].marca,
                vetVeiculos[i].modelo,
@@ -188,7 +189,6 @@ void printVeiculos()
 }
 void printClientes()
 {
-
     for (int j = 1; j < 100 && vetClientes[j].codigo != 999; j++)
     {
         printf("\n%i %s %s %s %s", vetClientes[j].codigo,
@@ -201,8 +201,29 @@ void printClientes()
 
 void cadastraVeiculo()
 {
-
-    printf("1");
+    // FILE *arqVeiculos;
+    // int i = 0;
+    // arqVeiculos = fopen("veiculos.txt", "r");
+    // if (arqVeiculos != NULL)
+    // {
+    //     while (strcmp("EOF", vetVeiculos[i].codigo) != 0)
+    //     {
+    //         fprintf(arqVeiculos, "veiculo inicio \n");
+    //         fprintf(arqVeiculos, "--Nome %s\n", vetVeiculos[i].nome);
+    //         fprintf(arqVeiculos, "--Email %s\n", vetVeiculos[i].email);
+    //         fprintf(arqVeiculos, "--Celular %s\n", vetVeiculos[i].celular);
+    //         fprintf(arqVeiculos, "--Rua %s\n", vetVeiculos[i].endereco.rua);
+    //         fprintf(arqVeiculos, "--Nro %s\n", vetVeiculos[i].endereco.numero);
+    //         fprintf(arqVeiculos, "--Comp %s\n", vetVeiculos[i].endereco.complemento);
+    //         fprintf(arqVeiculos, "--Bairro %s\n", vetVeiculos[i].endereco.bairro);
+    //         fprintf(arqVeiculos, "--Cidade %s\n", vetVeiculos[i].endereco.cidade);
+    //         fprintf(arqVeiculos, "--Estado %s\n", vetVeiculos[i].endereco.estado);
+    //         fprintf(arqVeiculos, "--Cep %s\n", vetVeiculos[i].endereco.cep);
+    //         fprintf(arqVeiculos, "fim contato \n");
+    //         i = i + 1;
+    //     }
+    //     fclose(arqVeiculos);
+    // }
 }
 
 void cadastraCliente()
