@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1656962195 source:/home/matt-pessoa/puc/aeds-fes-locadora/main.c
+	<stdio.h>
+	<stdlib.h>
+

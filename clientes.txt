@@ -3,7 +3,7 @@ codigo 1
 nome Juliana Serra
 cnh 0004568899
 telefone 3199755-0908
-endereco Rua das Abelhinhas 
+endereco Rua das Abelhinhas
 cliente fim
 
 cliente inicio

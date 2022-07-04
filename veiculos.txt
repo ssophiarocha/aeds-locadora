@@ -6,7 +6,8 @@ modelo Fit
 ano 2015
 categoria Ret
 assentos 5
-veiculo fim 
+status Livre
+veiculo fim
 
 veiculo inicio
 numero 2
@@ -16,7 +17,8 @@ modelo Uno
 ano 2015
 categoria Ret
 assentos 5
-veiculo fim 
+status Livre
+veiculo fim
 
 veiculo inicio
 numero 3
@@ -26,7 +28,8 @@ modelo Etios
 ano 2018
 categoria Ret
 assentos 5
-veiculo fim 
+status Livre
+veiculo fim
 
 veiculo inicio
 numero 4
@@ -36,7 +39,8 @@ modelo HB20
 ano 2014
 categoria Ret
 assentos 5
-veiculo fim 
+status Livre
+veiculo fim
 
 veiculo inicio
 numero 5
@@ -46,7 +50,8 @@ modelo HB20s
 ano 2015
 categoria Sedan
 assentos 5
-veiculo fim 
+status Livre
+veiculo fim
 
 veiculo inicio
 numero 6
@@ -56,7 +61,8 @@ modelo Renegade
 ano 2018
 categoria SuV
 assentos 5
-veiculo fim 
+status Livre
+veiculo fim
 
 veiculo inicio
 numero 7
@@ -66,7 +72,8 @@ modelo Yaris
 ano 2021
 categoria Ret
 assentos 5
-veiculo fim 
+status Livre
+veiculo fim
 
 veiculo inicio
 numero 8
@@ -76,7 +83,8 @@ modelo Argo
 ano 2021
 categoria Ret
 assentos 5
-veiculo fim 
+status Livre
+veiculo fim
 
 veiculo inicio
 numero 9
@@ -86,7 +94,8 @@ modelo Saveiro
 ano 2019
 categoria Picape
 assentos 2
-veiculo fim 
+status Livre
+veiculo fim
 
 veiculo inicio
 numero 10
@@ -96,7 +105,8 @@ modelo Strada
 ano 2022
 categoria Picape
 assentos 2
-veiculo fim 
+status Livre
+veiculo fim
 
 veiculo inicio
 numero 11
@@ -105,4 +115,5 @@ marca Kia
 modelo Serato
 ano 2012
 categoria Sedan
-veiculo fim 
+status Alugado
+veiculo fim
