@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-struct sVeiculos
+typedef struct sVeiculos
 {
     int numero;
     char placa[10];
@@ -13,7 +13,6 @@ struct sVeiculos
     char assentos[5];
     char status[20];
     float diaria;
-    char desc[100];
 };
 typedef struct sVeiculos tVeiculos;
 tVeiculos vetVeiculos[100];
@@ -24,7 +23,7 @@ struct sClientes
     char nome[30];
     char cnh[20];
     char telefone[20];
-    char endereco[80];
+    char endereco[110];
 };
 typedef struct sClientes tClientes;
 tClientes vetClientes[100];
@@ -53,10 +52,11 @@ int main()
     printf("\n---------------------LOCAMAIS----------------------\n");
     printf("\n---------------------------------------------------\n");
 
-    printf("\n(1) Cadastrar veiculo\n(2) Cadastrar cliente\n(3) Cadastrar locacao\n(4) Validar locacao\n(5) Pesquisar clientes\n(6) Listar clientes\n(7) Pesquisar veiculos\n(8) Listar veiculos\n\n Caso queira SAIR, digite 0\n");
+    printf("\n(1) Cadastrar veiculo\n(2) Cadastrar cliente\n(3) Cadastrar locacao\n(4) Validar locacao\n(5) Pesquisar clientes\n(6) Listar clientes\n(7) Pesquisar veiculos\n(8) Listar veiculos\n(9) Listar veiculos disponiveis\n\n Caso queira SAIR, digite 0\n");
 
     printf("\n\nDigite um numero para executar a funcao: ");
     scanf("%d", &opcao);
+    fflush(stdin);
 
     while (opcao != 0)
     {
@@ -86,6 +86,13 @@ int main()
         case 8:
             printVeiculos();
             break;
+        case 9:
+            printVeiculosLivres();
+            break;
+        default:
+            printf("\nOpcao invalida!\n");
+            return 0;
+            break;
         }
         printf("\n\n------------------------------------------------\n");
         printf("\n------------------------------------------------\n");
@@ -94,6 +101,7 @@ int main()
 
         printf("\n\nDigite um numero para executar a funcao: ");
         scanf("%d", &opcao);
+        fflush(stdin);
     }
 
 
@@ -247,7 +255,7 @@ int carregaLocacao()
 
 void printVeiculos()
 {
-    for (int i = 1; i<100 && vetVeiculos[i].numero != 999; i++)
+    for (int i = 1; i<100 && vetVeiculos[i].numero != 0; i++)
     {
         printf("\n%i %s %s %s %s %s %s",
                vetVeiculos[i].numero,
@@ -277,7 +285,7 @@ void printVeiculosLivres()
 void printClientes()
 {
 
-    for (int j = 1; j<100 && vetClientes[j].codigo != 999; j++)
+    for (int j = 1; j<100 && vetClientes[j].codigo != 0; j++)
     {
         printf("\n%i %s %s %s %s", vetClientes[j].codigo,
                vetClientes[j].nome,
@@ -289,7 +297,7 @@ void printClientes()
 
 void cadastraVeiculo()
 {
-    char desc[100], modelo[100], cor[100], placa[7], status[100], categoria[100], marca[100], ano[5], qtdOcupantes[10], qtdAssentos[10];
+    char modelo[100], cor[100], placa[7], status[100], categoria[100], marca[100], ano[5], qtdOcupantes[10], qtdAssentos[10];
     int id = 1;
     float diaria;
     for (int i = 1; i<100 && vetVeiculos[i].numero != 999; i++)
@@ -299,48 +307,70 @@ void cadastraVeiculo()
 
     vetVeiculos[id].numero = id;
 
-    printf("\nPlaca do veículo: ");
+    printf("\nPlaca do veiculo: ");
     scanf("%s", &placa);
     strcpy(vetVeiculos[id].placa, placa);
 
-    printf("\nMarca do veículo: ");
+    printf("\nMarca do veiculo: ");
     scanf("%s", &marca);
     strcpy(vetVeiculos[id].marca, marca);
 
-    printf("\nModelo do veículo: ");
+    printf("\nModelo do veiculo: ");
     scanf("%s", &modelo);
     strcpy(vetVeiculos[id].modelo, modelo);
 
-    printf("\nAno do veículo: ");
+    printf("\nAno do veiculo: ");
     scanf("%s", &ano);
     strcpy(vetVeiculos[id].ano, ano);
 
-    printf("\nCategoria do veículo: ");
+    printf("\nCategoria do veiculo: ");
     scanf("%s", &categoria);
     strcpy(vetVeiculos[id].categoria, categoria);
 
-    printf("\nQuantidade de assentos do veículo: ");
+    printf("\nQuantidade de assentos do veiculo: ");
     scanf("%s", &qtdAssentos);
     strcpy(vetVeiculos[id].assentos, qtdAssentos);
 
-    printf("\nValor da diária do veículo: ");
+    printf("\nValor da diaria do veiculo: ");
     scanf("%s", &diaria);
     vetVeiculos[id].diaria = diaria;
 
-    printf("\nStatus do veículo: ");
+    printf("\nStatus do veiculo: ");
     scanf("%s", &status);
     strcpy(vetVeiculos[id].status, status);
 
-    printf("\nDescrição do veículo: ");
-    scanf("%s", &desc);
-    strcpy(vetVeiculos[id].desc, desc);
+    printf("\nVeiculo cadastrado!\n");
 }
 
 void cadastraCliente()
 {
 
-    printf ("2");
+    char nome[30], telefone[20], cnh[20], endereco[80];
+    int j = 1;
+    for (int i = 1; i<100 && vetClientes[i].codigo != 999; i++)
+    {
+        j++;
+    }
 
+    vetClientes[j].codigo = j;
+
+    printf("\n\nNome:\n");
+    scanf("%[^\n]%*c", &nome);
+    strcpy(vetClientes[j].nome, nome);
+
+    printf("\n\nCNH:\n");
+    scanf("%[^\n]%*c", &cnh);
+    strcpy(vetClientes[j].cnh, cnh);
+
+    printf("\n\nTelefone:\n");
+    scanf("%[^\n]%*c", &telefone);
+    strcpy(vetClientes[j].telefone, telefone);
+
+    printf("\n\nEndereco: ");
+    scanf("%[^\n]%*c", &endereco);
+    strcpy(vetClientes[j].endereco, endereco);
+
+     printf("\nCliente cadastrado!\n");
 }
 
 void cadastraLoc()
@@ -350,6 +380,8 @@ void cadastraLoc()
     printf ("\n \nQual carro você deseja alugar? ");
     scanf("%i", &id);
     strcpy(vetVeiculos[id].status, "Alugado");
+
+     printf("\nLocacao cadastrado!\n");
 }
 
 void validaLoc()
@@ -397,11 +429,12 @@ void pesquisaVeiculo()
         {
             printf("\n\n-----Veículo encontrado!-----\n\n");
             printf("\n%i %s %s %s %s %s", vetVeiculos[i].numero,
-                   vetVeiculos[i].placa,
-                   vetVeiculos[i].marca,
-                   vetVeiculos[i].modelo,
-                   vetVeiculos[i].ano,
-                   vetVeiculos[i].categoria );
+               vetVeiculos[i].placa,
+               vetVeiculos[i].marca,
+               vetVeiculos[i].modelo,
+               vetVeiculos[i].ano,
+               vetVeiculos[i].categoria,
+               vetVeiculos[i].status );
             encontrei ++;
         }
     }
